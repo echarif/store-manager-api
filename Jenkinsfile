@@ -16,5 +16,10 @@ pipeline {
                 sh 'gradle test'
             }
         }
+        stage('Integration-tests'){
+            steps{
+                sh 'gradle integrationTest'
+            }
+        }
     }
 }
