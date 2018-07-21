@@ -22,4 +22,9 @@ pipeline {
             }
         }
     }
+    post{
+        always{
+            junit 'build/test-results/**/TEST-*.xml'
+        }
+    }
 }
