@@ -21,6 +21,11 @@ pipeline {
                 sh 'gradle integrationTest'
             }
         }
+        stage('Code coverage'){
+            steps{
+                jacoco changeBuildStatus: true, maximumLineCoverage: '50'
+            }
+        }
     }
     post{
         always{
